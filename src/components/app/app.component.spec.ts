@@ -1,20 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
-import { addProviders, async, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: AngularWebpack', () => {
+describe('App', () => {
     beforeEach(() => {
-        addProviders([AppComponent]);
+        TestBed.configureTestingModule({
+            declarations: [AppComponent]
+        });
     });
-
-    it('should create the app',
-        inject([AppComponent], (app: AppComponent) => {
-            expect(app).toBeTruthy();
-        }));
-
-    it('should have as title \'app works!\'',
-        inject([AppComponent], (app: AppComponent) => {
-            // expect(app.title).toEqual('app works!');
-        }));
+    it ('should work', () => {
+        let fixture = TestBed.createComponent(AppComponent);
+        expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
+    });
 });

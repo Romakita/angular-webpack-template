@@ -11,8 +11,7 @@ module.exports = function (config) {
         ],
 
         preprocessors: {
-            './config/karma-test-shim.js': ['webpack', 'sourcemap'],
-            './src/components/*.spec.ts': ['typescript']
+            './config/karma-test-shim.js': ['webpack', 'sourcemap']
         },
 
         webpack: webpackConfig,

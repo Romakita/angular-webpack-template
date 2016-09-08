@@ -53,5 +53,27 @@
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0"
-  }
+  },
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Romakita/angular-webpack-template.git"
+  },
+  "keywords": [
+    "Angular2",
+    "Webpack",
+    "Typescript",
+    "Template",
+    "Karma",
+    "Coverage",
+    "TSLint"
+  ],
+  "author": "Romain Lenzotti",
+  "bugs": {
+    "url": "https://github.com/Romakita/angular-webpack-template/issues"
+  },
+  "homepage": "https://github.com/Romakita/angular-webpack-template#readme"
 }
