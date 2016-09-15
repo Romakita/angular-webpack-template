@@ -1,16 +1,19 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('App', () => {
+    let fixture;
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [AppComponent]
         });
+        fixture = TestBed.createComponent(AppComponent);
+       // fixture.componentInstance
     });
     it ('should work', () => {
-        let fixture = TestBed.createComponent(AppComponent);
-        expect(fixture.componentInstance instanceof AppComponent).toBe(true, 'should create AppComponent');
+        expect(fixture.componentInstance instanceof AppComponent)
+            .toBe(true, 'should create AppComponent');
     });
 });
