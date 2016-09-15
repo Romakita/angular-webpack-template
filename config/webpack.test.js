@@ -29,7 +29,7 @@ module.exports = function(options) {
          * Do not change, leave as is or it wont work.
          * See: https://github.com/webpack/karma-webpack#source-maps
          */
-        devtool: 'inline-source-map',
+        devtool: 'eval-source-map',
 
         /**
          * Options affecting the resolving of modules.
@@ -43,7 +43,7 @@ module.exports = function(options) {
              *
              * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
              */
-            extensions: ['', '.ts', '.js'],
+            extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html'],
 
             /**
              * Make sure root is src
@@ -71,11 +71,11 @@ module.exports = function(options) {
                  *
                  * See: https://github.com/wbuchwalter/tslint-loader
                  */
-                {
-                    test: /\.ts$/,
-                    loader: 'tslint-loader',
-                    exclude: [helpers.root('node_modules')]
-                },
+               // {
+               //     test: /\.ts$/,
+               //     loader: 'tslint-loader',
+               //     exclude: [helpers.root('node_modules')]
+               // },
 
                 /**
                  * Source map loader support for *.js files
@@ -83,14 +83,14 @@ module.exports = function(options) {
                  *
                  * See: https://github.com/webpack/source-map-loader
                  */
-                {
+                /*{
                     test: /\.js$/,
                     loader: 'source-map-loader',
                     exclude: [
                         // these packages have problems with their sourcemaps
                         helpers.root('node_modules/rxjs'),
                         helpers.root('node_modules/@angular')
-                    ]}
+                    ]}*/
 
             ],
 
@@ -111,8 +111,8 @@ module.exports = function(options) {
                  */
                 {
                     test: /\.ts$/,
-                    loader: ['awesome-typescript-loader?removeComments=true', 'angular2-template-loader'],
-                    exclude: [/\.e2e\.ts$/]
+                    loader: ['ts', 'angular2-template-loader', '@angularclass/hmr-loader'],
+                    exclude: [/\.e2e\.ts$/, /node_modules\/(?!(ng2-.+))/]
                 },
 
                 /**
