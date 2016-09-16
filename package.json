@@ -15,9 +15,9 @@
   "homepage": "https://github.com/Romakita/angular-webpack-template#readme",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
+    "build:dev": "webpack --config webpack.config.js --progress --profile",
     "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
-    "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --bail",
+    "build:prod": "webpack --config webpack.config.js --production  --progress --profile --bail",
     "build": "npm run build:dev",
     "ci": "npm run lint && npm test && npm run e2e",
     "clean:dist": "npm run rimraf -- dist",

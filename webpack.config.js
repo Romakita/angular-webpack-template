@@ -1,5 +1,6 @@
+const env = process.env.NODE_ENV || process.argv.indexOf('--production') > -1 ? 'production' : '';
 
-switch(process.env.NODE_ENV) {
+switch(env) {
 
     case "prod":
     case "production":
