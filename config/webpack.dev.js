@@ -11,7 +11,6 @@ const commonConfig = require('./webpack.common.js'); // the settings that are co
  */
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 /**
  * Webpack Constants
@@ -128,7 +127,7 @@ module.exports = function(options) {
              */
             new NamedModulesPlugin(),
 
-            new DashboardPlugin()
+            //new DashboardPlugin(dashboard.setData)
         ],
 
         /**
@@ -155,6 +154,7 @@ module.exports = function(options) {
             port: METADATA.port,
             host: METADATA.host,
             historyApiFallback: true,
+            //quiet: true,
             watchOptions: {
                 aggregateTimeout: 300,
                 poll: 1000

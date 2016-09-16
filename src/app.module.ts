@@ -19,3 +19,4 @@ export class AppModule {
 
 }
 
+console.log('Message');
