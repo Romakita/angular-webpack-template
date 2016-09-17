@@ -111,7 +111,7 @@ module.exports = function(options) {
                  */
                 {
                     test: /\.ts$/,
-                    loader: ['ts', 'angular2-template-loader', '@angularclass/hmr-loader'],
+                    loaders: ['ts', 'angular2-template-loader', '@angularclass/hmr-loader'],
                     exclude: [/\.e2e\.ts$/, /node_modules\/(?!(ng2-.+))/]
                 },
 
