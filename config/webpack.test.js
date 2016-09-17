@@ -71,11 +71,11 @@ module.exports = function(options) {
                  *
                  * See: https://github.com/wbuchwalter/tslint-loader
                  */
-               // {
-               //     test: /\.ts$/,
-               //     loader: 'tslint-loader',
-               //     exclude: [helpers.root('node_modules')]
-               // },
+                {
+                    test: /\.ts$/,
+                    loader: 'tslint-loader',
+                    exclude: [helpers.root('node_modules')]
+                },
 
                 /**
                  * Source map loader support for *.js files
@@ -83,14 +83,15 @@ module.exports = function(options) {
                  *
                  * See: https://github.com/webpack/source-map-loader
                  */
-                /*{
+                {
                     test: /\.js$/,
                     loader: 'source-map-loader',
                     exclude: [
                         // these packages have problems with their sourcemaps
                         helpers.root('node_modules/rxjs'),
                         helpers.root('node_modules/@angular')
-                    ]}*/
+                    ]
+                }
 
             ],
 
@@ -107,7 +108,7 @@ module.exports = function(options) {
                 /**
                  * Typescript loader support for .ts and Angular 2 async routes via .async.ts
                  *
-                 * See: https://github.com/s-panferov/awesome-typescript-loader
+                 * Fix: Use ts-loader insteadof awesome-ts-loader to resolve sourcemaping in coverage report.
                  */
                 {
                     test: /\.ts$/,
